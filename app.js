@@ -1,173 +1,189 @@
-// // Masala-1
-// function getAverageAge(arr) {
-//     let ages = 0
-//     for (let i = 0; i < arr.length; i++) {
-//         ages += arr[i].age;
-//     }
+// Masala-1
+function getAverageAge(arr) {
+    let ages = 0
+    for (let i = 0; i < arr.length; i++) {
+        ages += arr[i].age;
+    }
 
-//     return ages / arr.length
-// }
-// const people = [
-//     { name: "Abdulaziz", age: 33 },
-//     { name: "Erkin", age: 22 },
-//     { name: "Temur", age: 34 },
-//     { name: "Sardor", age: 20 },
-// ];
-// console.log(getAverageAge(people));
+    return ages / arr.length
+}
+const people = [
+    { name: "Abdulaziz", age: 33 },
+    { name: "Erkin", age: 22 },
+    { name: "Temur", age: 34 },
+    { name: "Sardor", age: 20 },
+];
+console.log(getAverageAge(people));
 
-// //Masala-2
-// const obj = [];
+//Masala-2
+const obj = [];
 
-// function getAverageAge(arr, age) {
-//     for (let i = 0; i < arr.length; i++) {
-//         arr[i].age > age ? (arr[i].isMerried = true) : (arr[i].isMerried = false);
-//         obj.push(arr[i]);
-//     }
+function getAverageAge(arr, age) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i].age > age ? (arr[i].isMerried = true) : (arr[i].isMerried = false);
+        obj.push(arr[i]);
+    }
 
-//     return obj;
-// }
-// const people = [
-//     { name: "Abdulaziz", age: 33 },
-//     { name: "Erkin", age: 22 },
-//     { name: "Temur", age: 34 },
-//     { name: "Sardor", age: 20 },
-// ];
-// console.log(getAverageAge(people, 25));
-// // // Masala-3
-// function getNameMaxMinAge(arr) {
-//     let maxAge = arr[0].age;
-//     let minAge = arr[0].age;
-//     let maxName = arr[0].name;
-//     let minName = arr[0].name;
+    return obj;
+}
+const people = [
+    { name: "Abdulaziz", age: 33 },
+    { name: "Erkin", age: 22 },
+    { name: "Temur", age: 34 },
+    { name: "Sardor", age: 20 },
+];
+console.log(getAverageAge(people, 25));
 
-//     for (let i = 1; i < arr.length; i++) {
-//         if (arr[i].age > maxAge) {
-//             maxAge = arr[i].age;
-//             maxName = arr[i].name;
-//         }
-//         if (arr[i].age < minAge) {
-//             minAge = arr[i].age;
-//             minName = arr[i].name;
-//         }
-//     }
+// Masala - 3
 
-//     return [maxName, minName];
-// }
+function getNameMaxMinAge(arr) {
 
-// const people = [
-//     { name: "Abdulaziz", age: 33 },
-//     { name: "Erkin", age: 22 },
-//     { name: "Temur", age: 34 },
-//     { name: "Sardor", age: 20 }
-// ];
+    let maxAge = arr[0].age;
+    let minAge = arr[0].age;
+    let maxName = arr[0].name;
+    let minName = arr[0].name;
 
-// console.log(getNameMaxMinAge(people));
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i].age > maxAge) {
+            maxAge = arr[i].age;
+            maxName = arr[i].name;
+        }
+        if (arr[i].age < minAge) {
+            minAge = arr[i].age;
+            minName = arr[i].name;
+        }
+    }
 
+    return [maxName, minName];
+}
 
+const people = [
+    { name: "Abdulaziz", age: 33 },
+    { name: "Erkin", age: 22 },
+    { name: "Temur", age: 34 },
+    { name: "Sardor", age: 20 }
+];
 
-
-// // MAsala-4
-// function groupByValues(obj) {
-//     let result = {};
-
-//     for (let key in obj) {
-//         let value = obj[key];
-//         if (!result[value]) {
-//             result[value] = [];
-//         }
-//         result[value].push(Number(key));
-//     }
-
-//     return result;
-// }
-
-// const input = { 1: 20, 2: 30, 3: 20, 4: 40, 5: 30, 6: 50, 7: 40, 8: 20 };
-
-// console.log(groupByValues(input));
+console.log(getNameMaxMinAge(people));
 
 
-//MAsala-5
-// function mergeObjects(obj1, obj2) {
-//     let result = {};
-
-//     for (let key in obj1) {
-//         if (!(key in obj2)) {
-//             result[key] = obj1[key];
-//         }
-//     }
-
-//     for (let key in obj2) {
-//         if (!(key in obj1)) {
-//             result[key] = obj2[key];
-//         }
-//     }
-
-//     return result;
-// }
-
-// const obj1 = { a: 3, b: 10, c: 5, d: 7 };
-// const obj2 = { a: 10, d: 4, e: 6, f: 15 };
-
-// console.log(mergeObjects(obj1, obj2)); // { b: 10, c: 5, e: 6, f: 15 }
 
 
-// MAsala-2
-// function createSquaresObject(n) {
-//     let result = {};
+// MAsala-4
+function groupByValues(obj) {
+    let result = {};
 
-//     for (let i = 1; i <= n; i++) {
-//         result[i] = i * i;
-//     }
+    for (let key in obj) {
+        let value = obj[key];
+        if (!result[value]) {
+            result[value] = [];
+        }
+        result[value].push(Number(key));
+    }
 
-//     return result;
-// }
-
-// const n = 5;
-// console.log(createSquaresObject(n));
+    return result;
+}
 
 
-// MAsala-3
-// function sumKeysAndValues(obj) {
-//     const keys = Object.keys(obj);
-//     const values = Object.values(obj);
+console.log(groupByValues(input));
 
-//     const sumKeys = keys.reduce((sum, key) => sum + Number(key), 0);
-//     const sumValues = values.reduce((sum, value) => sum + value, 0);
 
-//     return sumKeys + sumValues;
-// }
+MAsala - 5
 
-// const obj = { 1: 1, 2: 4, 3: 9, 4: 16, 5: 25 };
+function mergeObjects(obj1, obj2) {
+    let result = {};
 
-// console.log(sumKeysAndValues(obj));
+    for (let key in obj1) {
+        if (!(key in obj2)) {
+            result[key] = obj1[key];
+        }
+    }
 
-// // MAsala-4
-// function createObjectFromStrings(arr) {
-//     let result = {};
+    for (let key in obj2) {
+        if (!(key in obj1)) {
+            result[key] = obj2[key];
+        }
+    }
 
-//     for (let i = 0; i < arr.length; i++) {
-//         result[arr[i]] = arr[i].length;
-//     }
+    return result;
+}
 
-//     return result;
-// }
+const obj1 = { a: 3, b: 10, c: 5, d: 7 };
+const obj2 = { a: 10, d: 4, e: 6, f: 15 };
 
-// const strings = ["Abdulaziz", "Safarmurod", "O’rol", "Jahongir"];
+console.log(mergeObjects(obj1, obj2));
 
-// console.log(createObjectFromStrings(strings));
 
-// // Masala-5
-// function calculateTotalPrice(obj) {
-//     const prices = Object.values(obj);
-//     const totalPrice = prices.reduce((sum, price) => sum + price, 0);
-//     return totalPrice;
-// }
+MAsala - 2
 
-// const products = {
-//     "Apelsin": 10000,
-//     "Olma": 12000,
-//     "Mandarin": 8000,
-//     "Banan": 20000
-// };
+function createSquaresObject(n) {
+    let result = {};
 
-// console.log(calculateTotalPrice(products));
+    for (let i = 1; i <= n; i++) {
+        result[i] = i * i;
+    }
+
+    return result;
+}
+
+const n = 5;
+console.log(createSquaresObject(n));
+
+
+// Masala - 3
+
+function sumKeysAndValues(obj) {
+    const keys = Object.keys(obj);
+    const values = Object.values(obj);
+
+    const sumKeys = keys.reduce((sum, key) => sum + Number(key), 0);
+    const sumValues = values.reduce((sum, value) => sum + value, 0);
+
+    return sumKeys + sumValues;
+}
+
+const obj = { 1: 1, 2: 4, 3: 9, 4: 16, 5: 25 };
+
+console.log(sumKeysAndValues(obj));
+
+// MAsala-4
+function createObjectFromStrings(arr) {
+    let result = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        result[arr[i]] = arr[i].length;
+    }
+
+    return result;
+}
+
+const strings = ["Abdulaziz", "Safarmurod", "O’rol", "Jahongir"];
+
+console.log(createObjectFromStrings(strings));
+
+// Masala-5
+function calculateTotalPrice(obj) {
+    const prices = Object.values(obj);
+    const totalPrice = prices.reduce((sum, price) => sum + price, 0);
+    return totalPrice;
+}
+
+
+console.log(calculateTotalPrice(products));
+
+// Masala-8
+
+function countOccurrences(arr) {
+    const result = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        const num = arr[i];
+        if (result[num]) {
+            result[num] += 1;
+        } else {
+            result[num] = 1;
+        }
+    }
+
+    return result;
+}
